@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hotel Bill Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 80%;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .header h1 {
+      margin: 0;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .form-group input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .form-group input[type="radio"] {
+      margin-right: 10px;
+    }
+    .submit-btn {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #3e8e41;
+    }
+    .view-btn {
+      background-color: #2196F3;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .view-btn:hover {
+      background-color: #1e88e5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Hotel Bill Generator</h1>
+    </div>
+    <form action="BillServlet" method="post">
+       <div class="form-group">
+        Enter customer name:<input type="text" name="custname" required><br>
+        Enter customer contact no:<input type="number" name="custcontact" required><br>
+      </div>
+      <div class="form-group">
+        <label>Select your starter options :</label>
+        <input type="checkbox" name="starter" value="120"> Paneer Tikka (Rs. 120)<br>
+        <input type="checkbox" name="starter" value="150"> Veg Manchurian (Rs. 150)<br>
+        <input type="checkbox" name="starter" value="100"> Soup (Rs. 100)
+       </div>
+      <div class="form-group">
+        <label>Select your veg option:</label>
+        <input type="checkbox" name="veg" value="150"> Veg Biryani (Rs. 150)<br>
+        <input type="checkbox" name="veg" value="100"> Veg Curry (Rs. 100)<br>
+        <input type="checkbox" name="veg" value="180"> Palak Paneer (Rs. 180)
+      </div>
+      <div class="form-group">
+        <label>Select your non-veg option:</label>
+        <input type="checkbox" name="nonVeg" value="200"> Chicken Biryani (Rs. 200)<br>
+        <input type="checkbox" name="nonVeg" value="250"> Fish Fry (Rs. 250)<br>
+        <input type="checkbox" name="nonVeg" value="220"> Mutton Curry (Rs. 220)
+      </div>
+       <div class="form-group">
+        <label>Bisleri (Rs. 20)</label>
+        <input type="radio" name="Bisleri" value="yes">Yes <br>
+        <input type="radio" name="Bisleri" value="no">No <br>
+       </div>
+      <button class="submit-btn" type="submit">Generate Bill</button>
+    </form>
+    <a href="ViewCustomersServlet" class="view-btn" >View All Customers</a> <!-- Link to view all customers -->
+  </div>
+</body>
+</html>
